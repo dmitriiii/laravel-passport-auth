@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PassportAuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Api\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,5 +23,6 @@ Route::post('login', [PassportAuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
     Route::resource('posts', PostController::class);
+    Route::resource('projects', ProjectController::class);
 });
 
